@@ -1,0 +1,16 @@
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laguardia"
+version = "0.2.0"
+description = "LaGuardia - Lightweight Policy-as-Code for Terraform/OpenTofu"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name="Senora.dev OSS"}]
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+laguardia = "laguardia.cli:main"

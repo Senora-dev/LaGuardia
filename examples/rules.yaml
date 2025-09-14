@@ -1,0 +1,43 @@
+
+rules:
+  - id: tags.required
+    target: any
+    type: require_tags
+    params:
+      required: ["owner", "env"]
+    level: error
+
+  - id: aws.s3.encrypted
+    target: aws_s3_bucket
+    type: field_equals
+    field: server_side_encryption_configuration.rules[0].apply_server_side_encryption_by_default.sse_algorithm
+    equals: AES256
+    level: error
+
+  - id: aws.sg.no-wide-open
+    target: aws_security_group_rule
+    type: forbid_cidr
+    field: cidr_blocks
+    value: "0.0.0.0/0"
+    level: error
+
+  - id: aws.ebs.encrypted
+    target: aws_ebs_volume
+    type: field_equals
+    field: encrypted
+    equals: true
+    level: error
+
+  - id: aws.rds.backup
+    target: aws_db_instance
+    type: field_equals
+    field: backup_retention_period
+    equals: 7
+    level: warning
+
+  - id: aws.vpc.flowlogs
+    target: aws_vpc
+    type: require_tags
+    params:
+      required: ["flow-logs-enabled"]
+    level: warning
