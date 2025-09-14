@@ -3,7 +3,8 @@
 
 Guardrails for Terraform/OpenTofu **plan JSON** with **simple YAML rules** and **Auto‑Fix**.
 
-![LaGuardia Logo](https://raw.githubusercontent.com/senora-dev/laguardia/main/assets/logo.png)
+[![LaGuardia Logo](https://raw.githubusercontent.com/senora-dev/laguardia/main/assets/logo.png)](https://raw.githubusercontent.com/Senora-dev/LaGuardia/main/assets/logo.png
+)
 
 ## Install
 ```bash
