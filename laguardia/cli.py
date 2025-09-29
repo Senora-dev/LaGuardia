@@ -18,6 +18,7 @@ def main():
     if args.cmd == "scan":
         findings = run_scan(args.plan, args.rules, args.out, args.autofix)
         if args.fail_on == "none":
+            print("Run status: OK")
             sys.exit(0)
         levels = {"warning": 1, "error": 2}
         threshold = levels[args.fail_on]
@@ -25,8 +26,11 @@ def main():
         for f in findings:
             worst = max(worst, levels.get(f.get("level","warning"), 1))
         if worst >= threshold and findings:
+            print("Run status: FAIL")
             sys.exit(1)
-        sys.exit(0)
+        else:
+            print("Run status: OK" + (" (issues found)" if findings else " (no issues)"))
+            sys.exit(0)
 
 if __name__ == "__main__":
     main()

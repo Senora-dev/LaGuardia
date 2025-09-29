@@ -14,3 +14,8 @@ dependencies = ["PyYAML>=6.0"]
 
 [project.scripts]
 laguardia = "laguardia.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["laguardia*"]
+exclude = ["tests*", "examples*", "assets*"]
