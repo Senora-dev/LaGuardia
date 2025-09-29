@@ -3,8 +3,7 @@
 
 Guardrails for Terraform/OpenTofu **plan JSON** with **simple YAML rules** and **Auto‑Fix**.
 
-[![LaGuardia Logo](https://raw.githubusercontent.com/senora-dev/laguardia/main/assets/logo.png)](https://raw.githubusercontent.com/Senora-dev/LaGuardia/main/assets/logo.png
-)
+![LaguradiaLogo](assets/logo.png)  
 
 ## Install
 ```bash
@@ -34,7 +33,7 @@ terraform plan -out=plan.out && terraform show -json plan.out > plan.json && rm 
 ```
 
 Output semantics:
-- Findings print as `[ISSUE] (level) <rule> <type>.<name>: <message>`
+- Findings print as `[ERROR|WARNING] <rule> <type>.<name>: <message>`
 - Final line prints `Run status: OK` or `Run status: FAIL`
 - Control failing behavior via `--fail-on [error|warning|none]` (default: `error`)
 

@@ -131,7 +131,7 @@ def run_scan(plan_path, rules_path, html_out=None, autofix_out=None):
     if findings:
         print(f"LaGuardia: found {len(findings)} issue(s)")
         for f in findings:
-            print(f"[ISSUE] ({f.get('level','')}) {f['rule_id']} {f['resource_type']}.{f['resource_name']}: {f['message']}")
+            print(f"[{f['level'].upper()}] {f['rule_id']} {f['resource_type']}.{f['resource_name']}: {f['message']}")
     else:
         print("LaGuardia: no issues found ✅")
 
