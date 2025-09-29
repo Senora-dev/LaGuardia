@@ -1,5 +1,5 @@
 
-# LaGuardia - Lightweight Policy‑as‑Code (MVP)
+# LaGuardia - Lightweight Policy‑as‑Code
 
 Guardrails for Terraform/OpenTofu **plan JSON** with **simple YAML rules** and **Auto‑Fix**.
 
@@ -38,7 +38,7 @@ Output semantics:
 - Control failing behavior via `--fail-on [error|warning|none]` (default: `error`)
 
 ## Rules (YAML)
-See `examples/rules.yaml`. Supported kinds (MVP):
+See `examples/rules.yaml`. Supported kinds:
 - `require_tags`: ensure tags/labels exist.
 - `field_equals`: nested field equals a value.
 - `forbid_cidr`: remove forbidden CIDR from list.
